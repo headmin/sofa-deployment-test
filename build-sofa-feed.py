@@ -216,14 +216,14 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
     ]
     print(
         f"Software releases for {os_type}: {software_releases}"
-    )  # TODO: as per below, this is weird, revisit
+    )  # TODO: as per below, this is weird, revisit  noqa: E501 pylint: disable=line-too-long
     feed_structure: dict = {
         "OSVersions": [],
     }
     if os_type == "macOS":
         catalog_url: str = (
-            "https://swscan.apple.com/content/catalogs/others/index-15seed-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-            # noqa: E501 pylint: disable=line-too-long
+            "https://swscan.apple.com/content/catalogs/others/index-15seed-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz" 
+    # noqa: E501 pylint: disable=line-too-long
         )
         catalog_content = fetch_content(catalog_url)
         config_match = re.search(
@@ -270,7 +270,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
         uma_list = {
             "LatestUMA": latest,
             "AllPreviousUMA": rest,
-        }  # TODO: flatten all this down into the one call and subsequent assignment
+        }  # TODO: flatten all this down into the one call and subsequent assignment  # noqa: E501 pylint: disable=line-too-long
         feed_structure["InstallationApps"] = uma_list
         # ipsw (latest/'most prevalent' in mesu only as of v1) parsing
         mesu_url: str = (
@@ -290,7 +290,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
         apple_slug = process_ipsw.process_slug(prevalent_url)
         print(f"Extracted IPSW\n{prevalent_url}")
         feed_structure["InstallationApps"]["LatestMacIPSW"] = (
-            {  # TODO: flatten all this down into the one call and subsequent assignment, too
+            {  # TODO: flatten all this down into the one call and subsequent assignment, too  # noqa: E501 pylint: disable=line-too-long
                 "macos_ipsw_url": prevalent_url,
                 "macos_ipsw_build": prevalent_build,
                 "macos_ipsw_version": prevalent_version,
@@ -301,7 +301,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
         # Initialize os_versions dynamically for iOS
         os_versions = [
             ("iOS", release["name"], None) for release in software_releases
-        ]  # Populates "iOS 18" when config only has "18"
+        ]  # Populates "iOS 18" when config only has "18" # noqa: E501 pylint: disable=line-too-long
         print(f"OS versions for {os_type}: {os_versions}")
         print(f"Skipping fetching XProtect and 'Models' data for {os_type}.")
     else:
@@ -324,17 +324,13 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
         if latest_version_info is not None:
             # Format dates, handle missing 'ReleaseDate'
             if "ReleaseDate" in latest_version_info:
-                latest_version_info["ReleaseDate"] = format_iso_date(
-                    latest_version_info["ReleaseDate"]
-                )
+                latest_version_info["ReleaseDate"] = format_iso_date(latest_version_info["ReleaseDate"])
             else:
                 print(f"Warning: 'ReleaseDate' missing for {os_version_name}")
                 latest_version_info["ReleaseDate"] = "Unknown"
 
             if "ExpirationDate" in latest_version_info:
-                latest_version_info["ExpirationDate"] = format_iso_date(
-                    latest_version_info["ExpirationDate"]
-                )
+                latest_version_info["ExpirationDate"] = format_iso_date(latest_version_info["ExpirationDate"])
 
             # Handle missing 'ProductVersion'
             if "ProductVersion" in latest_version_info:
@@ -344,9 +340,8 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
                 product_version = "Unknown"  # Set a default value or handle accordingly
 
             if os_type == "macOS":
-                # Use os_version_name instead of product_version
                 latest_security_info = fetch_security_releases(
-                    os_type, os_version_name, gdmf_data
+                    os_type, product_version, gdmf_data
                 )
                 if latest_security_info:
                     latest_version_info["SecurityInfo"] = latest_security_info[0][
@@ -364,7 +359,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
                     {
                         "OSVersion": os_version_name,
                         "Latest": latest_version_info,
-                        "SecurityReleases": fetch_security_releases(  # TODO: second instance of fetching HT201222
+                        "SecurityReleases": fetch_security_releases(  # TODO: second instance of fetching HT201222 # noqa: E501 pylint: disable=line-too-long
                             os_type, os_version_name, gdmf_data
                         ),
                         "SupportedModels": compatible_machines,  # Add compatible machines here
@@ -376,7 +371,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
                     {
                         "OSVersion": os_version_name,
                         "Latest": latest_version_info,
-                        "SecurityReleases": fetch_security_releases(
+                        "SecurityReleases": fetch_security_releases(  # TODO: potentially 3rd instance of fetching HT201222 # noqa: E501 pylint: disable=line-too-long
                             os_type, os_version_name, gdmf_data
                         ),  # Note: 'SupportedModels' is not included for iOS
                     }
@@ -392,6 +387,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
     write_timestamp_and_hash(os_type, hash_value)
     read_and_validate_json(data_feed_filename)
     return data_feed
+
 
 def fetch_content(url: str) -> str:
     """Fetch content from the given URL, basic checking for errors"""
@@ -579,6 +575,7 @@ def format_iso_date(date_str: str) -> str:
 
 def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> list:
     """Fetch security releases for the given OS type and version, sourced from multiple Apple Support pages."""
+    
     # Updated URLs to include multiple sources
     urls = [
         "https://support.apple.com/en-ca/100100",  # Current info
@@ -586,7 +583,7 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
         "https://support.apple.com/en-ca/120989",  # 2020 to 2021
         "https://support.apple.com/en-ca/103179",  # 2018 to 2019
     ]
-
+    
     security_releases = []
     release_dates = []
 
@@ -595,72 +592,53 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
         print(f"Fetching data from {url}")
         response = requests.get(url)
 
-        if response.ok:
+        if (
+            response.ok
+        ):  # TODO: any validation we want on the rest of this page we're parsing?
             html_content = response.text
             soup = BeautifulSoup(html_content, "lxml")
             rows = soup.find_all("tr")
-
+            
             release_dates = []
             for row in rows:
                 cells = row.find_all("td")
                 if cells:
-                    name_info = cells[0].get_text(strip=True)
-                    os_version_info = process_os_version(name_info)
-                    # Ensure os_version_info has both os_type and os_version matching the target
-                    if (
-                        os_version_info.get("os_type") == os_type
-                        and os_version in os_version_info.get("os_version", "")
-                    ):
+                    name_info = cells[0].get_text(strip=True)  # TODO: example of this value?
+                    os_version_info = process_os_version(os_type, os_version, name_info)
+                    # Ensure os_version_info non-empty/matches the targeted version before proceeding
+                    if os_version_info and os_version in os_version_info:  # Filter based on the targeted OS version
                         link = cells[0].find("a", href=True)
                         if link:
-                            link_info = urljoin(
-                                "https://support.apple.com", link["href"]
-                            )
+                            link_info = urljoin("https://support.apple.com", link["href"])
                             cves_exploitation_status = fetch_cves(link_info)
                         else:
                             link_info = None
                             cves_exploitation_status = {}
-                        # Extract ProductVersion from the name_info
+                        # extract ProductVersion from the name_info, any digit(s), dot, any digit(s)
                         version_match = re.search(r"\d+(\.\d+)*", name_info)
-                        product_version = (
-                            version_match.group() if version_match else "Unknown"
-                        )
-                        print(
-                            f"Processing security release {product_version}, source {name_info}"
-                        )
+                        product_version = version_match.group() if version_match else "Unknown"
+                        print(f"Processing security release {product_version}, source {name_info}")
                         # Handling the case when the page indicates no published CVE entries
-                        if (
-                            link_info
-                            and "no published CVE entries"
-                            in fetch_content(link_info).lower()
-                        ):
+                        if link_info and "no published CVE entries" in fetch_content(link_info).lower():
                             cves_exploitation_status = {}
                         date = cells[-1].get_text(strip=True)
                         release_dates.append(date)
                         # Extract actively exploited CVEs if any
                         actively_exploited_cves = [
-                            cve
-                            for cve, exploited in cves_exploitation_status.items()
-                            if exploited
+                            cve for cve, exploited in cves_exploitation_status.items() if exploited
                         ]
-                        os_info = fetch_latest_os_version_info(
-                            os_type, product_version, gdmf_data
-                        )
+                        os_info = fetch_latest_os_version_info(os_type, product_version, gdmf_data)
                         if not os_info:
                             os_info = {}
-                        # Handle RSR releases by checking 'rapid_response' field
+                        # Handle RSR releases by grabbing letter in ()
                         rsr_release = None
-                        if "Rapid Security Response" in os_version_info.get(
-                            "rapid_response", ""
-                        ):
-                            rsr_vers = re.search(
-                                r"\((\w)\)", os_version_info.get("rapid_response", "")
-                            )
+                        if "Rapid Security Response" in os_version_info:
+                            rsr_vers = re.search(r"\((\w)\)", os_version_info)
                             if rsr_vers:
                                 rsr_release = rsr_vers.group(1)
                         security_releases.append(
                             {
-                                "UpdateName": name_info,
+                                "UpdateName": os_version_info,
                                 "ProductName": os_type,
                                 "ProductVersion": product_version,
                                 "ReleaseDate": date,
@@ -672,34 +650,25 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
                                     if link_info
                                     else "This update has no published CVE entries."
                                 ),
-                                "SupportedDevices": os_info.get(
-                                    "SupportedDevices", []
-                                ),
+                                "SupportedDevices": os_info.get("SupportedDevices", []),
                                 "CVEs": cves_exploitation_status,
                                 "ActivelyExploitedCVEs": actively_exploited_cves,
                                 "UniqueCVEsCount": len(cves_exploitation_status),
                             }
                         )
-            days_since_previous_release = calculate_days_since_previous_release(
-                release_dates
-            )
+            days_since_previous_release = calculate_days_since_previous_release(release_dates)
             for release in security_releases:
                 release_date = release["ReleaseDate"]
                 if release_date in days_since_previous_release:
-                    release["DaysSincePreviousRelease"] = days_since_previous_release[
-                        release_date
-                    ]
+                    release["DaysSincePreviousRelease"] = days_since_previous_release[release_date]
                 else:
                     release["DaysSincePreviousRelease"] = 0
         else:
             print(f"Failed to retrieve data from {url}")
             continue  # Skip to the next URL if the current one fails
+    
+    return security_releases if security_releases else print("Failed to retrieve security releases.") or []
 
-    return (
-        security_releases
-        if security_releases
-        else print("Failed to retrieve security releases.") or []
-    )
 
 
 def process_os_version(os_type: str, os_version: str, name_info: str) -> str:
@@ -707,18 +676,35 @@ def process_os_version(os_type: str, os_version: str, name_info: str) -> str:
     Needed to scrape CVE/rapid response info"""
     print(f"Processing data - {os_type}: {os_version}, Searching in: {name_info} ")
     rapid_response_prefix = "Rapid Security Response"
-    pattern = rf"({rapid_response_prefix})?\s*"  # Cool f-string, brosif
-    pattern += r"(macOS\s+\w+\s*\d+(?:\.\d+)*(?:\.\d+)*(?:\s*\([a-z]\))?)?\s*"
+    pattern = rf"({rapid_response_prefix})?\s*"
+    pattern += r"(macOS\s+\w+\s*(\d+(?:\.\d+)*(?:\.\d+)*(?:\s*\([a-z]\))?))?\s*"
     pattern += r"((iOS|iPadOS)\s+(\d+(?:\.\d+)?(?:\.\d+)?)(?:\s*\([a-z]\))?)?"
-    pattern += r"(\s+and\s+)?"  # TODO: What's this one for?
-    pattern += r"((iOS|iPadOS)\s+(\d+(?:\.\d+)?(?:\.\d+)?)(?:\s*\([a-z]\))?)?"  # TODO: Duplicate-looking, but needed, yes?  # noqa: E501 pylint: disable=line-too-long
+    pattern += r"(\s+and\s+)?"
+    pattern += r"((iOS|iPadOS)\s+(\d+(?:\.\d+)?(?:\.\d+)?)(?:\s*\([a-z]\))?)?"
     match = re.search(pattern, name_info, re.IGNORECASE)
     if match:
         rapid_response = match.group(1) or ""
         macos_part = match.group(2) or ""
-        first_os_part = match.group(3) or ""
-        second_os_connector = match.group(6) or ""
-        second_os_part = match.group(7) or ""
+        macos_version = match.group(3) or ""
+        first_os_part = match.group(4) or ""
+        first_os_type = match.group(5) or ""
+        first_os_version = match.group(6) or ""
+        second_os_connector = match.group(7) or ""
+        second_os_part = match.group(8) or ""
+        second_os_type = match.group(9) or ""
+        second_os_version = match.group(10) or ""
+        # Determine if the matched OS type and version correspond to the input os_type and os_version
+        matched = False
+        if os_type == 'macOS' and macos_version:
+            if os_version in macos_version:
+                matched = True
+        elif os_type in [first_os_type, second_os_type]:
+            if os_type == first_os_type and os_version in first_os_version:
+                matched = True
+            elif os_type == second_os_type and os_version in second_os_version:
+                matched = True
+        if not matched:
+            return ""
         # Ensure proper spacing after "Rapid Security Response" if it's present
         version_str = f"{rapid_response} " if rapid_response else ""
         # Concatenating OS parts with appropriate spacing
