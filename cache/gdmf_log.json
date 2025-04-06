@@ -1,9 +1,27 @@
 {
     "latest_etag": {
-        "LastCheck": "2025-04-06T08:35:52+00:00Z",
+        "LastCheck": "2025-04-06T12:42:48+00:00Z",
         "UpdateHash": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
     },
     "log": [
+        {
+            "timestamp": "2025-04-06T12:42:48+00:00Z",
+            "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
+            "status": "success (200)",
+            "previous_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
+        },
+        {
+            "timestamp": "2025-04-06T12:42:28+00:00Z",
+            "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
+            "status": "success (200)",
+            "previous_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
+        },
+        {
+            "timestamp": "2025-04-06T12:42:05+00:00Z",
+            "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
+            "status": "success (200)",
+            "previous_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
+        },
         {
             "timestamp": "2025-04-06T08:35:52+00:00Z",
             "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
@@ -45,24 +63,6 @@
             "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
             "status": "success (200)",
             "previous_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
-        },
-        {
-            "timestamp": "2025-04-06T00:46:03+00:00Z",
-            "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
-            "status": "success (200)",
-            "previous_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7"
-        },
-        {
-            "timestamp": "2025-04-06T00:45:36+00:00Z",
-            "new_etag": "ad5b6805df1959d959592b5afe64cb61aab952c45742e7b2fa845f07475c70b7",
-            "status": "success (200)",
-            "previous_etag": "b17f877a1db1bac28aa87bff603cca79697024740892ac28ad68297d1391dbe8"
-        },
-        {
-            "timestamp": "2025-04-05T20:32:55+00:00Z",
-            "new_etag": "b17f877a1db1bac28aa87bff603cca79697024740892ac28ad68297d1391dbe8",
-            "status": "success (200)",
-            "previous_etag": "b17f877a1db1bac28aa87bff603cca79697024740892ac28ad68297d1391dbe8"
         }
     ]
 }
