@@ -1,5 +1,5 @@
 {
-    "UpdateHash": "a28e46d933ef8e9598161c06ace7bd5420d8dc951ef277f89d65ead20a6c28fd",
+    "UpdateHash": "cdcdcede0d6d97d97c876e3a934b06dc5b9f9da6227545d9ac47bd648ebf4ed1",
     "OSVersions": [
         {
             "OSVersion": "18",
@@ -7,7 +7,7 @@
                 "ProductVersion": "18.5",
                 "Build": "22F6076",
                 "ReleaseDate": "2025-05-12T00:00:00Z",
-                "ExpirationDate": "2025-08-24T00:00:00Z",
+                "ExpirationDate": "2025-08-25T00:00:00Z",
                 "SupportedDevices": [
                     "iPad11,1",
                     "iPad11,2",
@@ -662,7 +662,7 @@
                 "ProductVersion": "17.7.2",
                 "Build": "21H6221",
                 "ReleaseDate": "2024-11-19T00:00:00Z",
-                "ExpirationDate": "2025-08-24T00:00:00Z",
+                "ExpirationDate": "2025-08-25T00:00:00Z",
                 "SupportedDevices": [
                     "iPad11,1",
                     "iPad11,2",
@@ -744,7 +744,7 @@
                     "ProductVersion": "17.7.8",
                     "Build": "21H440",
                     "ReleaseDate": "2025-05-19",
-                    "ExpirationDate": "2025-08-24",
+                    "ExpirationDate": "2025-08-25",
                     "SupportedDevices": [
                         "iPad7,1",
                         "iPad7,2",
@@ -1771,7 +1771,7 @@
                 "ProductVersion": "16.7.11",
                 "Build": "20H6360",
                 "ReleaseDate": "2025-03-31T00:00:00Z",
-                "ExpirationDate": "2025-08-24T00:00:00Z",
+                "ExpirationDate": "2025-08-25T00:00:00Z",
                 "SupportedDevices": [
                     "iPad6,11",
                     "iPad6,12",
@@ -2361,10 +2361,13 @@
                     "SecurityInfo": "https://support.apple.com/kb/HT213720",
                     "SupportedDevices": [],
                     "CVEs": {
-                        "CVE-2023-28206": false,
-                        "CVE-2023-28205": false
+                        "CVE-2023-28206": true,
+                        "CVE-2023-28205": true
                     },
-                    "ActivelyExploitedCVEs": [],
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2023-28206",
+                        "CVE-2023-28205"
+                    ],
                     "UniqueCVEsCount": 2,
                     "DaysSincePreviousRelease": 11
                 },
