@@ -13,7 +13,7 @@
       <link>https://sofa.macadmins.io/v1/rss_feed.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Jun 2025 19:05:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jun 2025 20:07:35 +0000</lastBuildDate>
     <item>
       <title>XProtect Plist Config 5299</title>
       <link>https://sofa.macadmins.io/</link>
@@ -574,7 +574,7 @@
     <item>
       <title>macOS Sonoma 14.3</title>
       <link>https://sofa.macadmins.io/</link>
-      <description>Vulnerabilities Addressed: 20&lt;br&gt;Exploited CVE(s): 0&lt;br&gt;Days to Prev. Release: 34</description>
+      <description>Vulnerabilities Addressed: 20&lt;br&gt;Exploited CVE(s): 1&lt;br&gt;Days to Prev. Release: 34</description>
       <guid isPermaLink="false">macOS_OS_14.3</guid>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
     </item>
