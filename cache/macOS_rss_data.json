@@ -2035,12 +2035,10 @@
             "CVE-2024-23206": false,
             "CVE-2024-23213": false,
             "CVE-2024-23214": false,
-            "CVE-2024-23222": true,
+            "CVE-2024-23222": false,
             "CVE-2024-23271": false
         },
-        "ActivelyExploitedCVEs": [
-            "CVE-2024-23222"
-        ],
+        "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 20,
         "DaysSincePreviousRelease": 34
     },
