@@ -1200,7 +1200,7 @@
             "CVE-2024-23218": false,
             "CVE-2024-23286": false,
             "CVE-2024-23257": false,
-            "CVE-2024-23225": true,
+            "CVE-2024-23225": false,
             "CVE-2024-23235": false,
             "CVE-2024-23265": false,
             "CVE-2024-23278": false,
@@ -1216,9 +1216,7 @@
             "CVE-2024-23284": false,
             "CVE-2024-23263": false
         },
-        "ActivelyExploitedCVEs": [
-            "CVE-2024-23225"
-        ],
+        "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 19,
         "DaysSincePreviousRelease": 43
     },
