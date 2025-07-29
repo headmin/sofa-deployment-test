@@ -1,5 +1,5 @@
 {
-    "UpdateHash": "3c871f228863b47d787df5c8114c5c3e8c0acaa638ea45d687b79e15c12aef23",
+    "UpdateHash": "51002a0750c23e51830f04a0cb99c86e0fec49bfec382e24187c14e7f90593e3",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
@@ -12745,6 +12745,13 @@
                 "build": "23H420",
                 "apple_slug": "072-84039",
                 "url": "https://swcdn.apple.com/content/downloads/32/49/072-84039-A_JPGNVJRH1M/cazcuskjdk6y6yrviytxanoevr5ihmz9lb/InstallAssistant.pkg"
+            },
+            {
+                "title": "macOS Ventura",
+                "version": "13.7.7",
+                "build": "22H722",
+                "apple_slug": "082-87267",
+                "url": "https://swcdn.apple.com/content/downloads/12/28/082-87267-A_WGJHPIPC6Q/e982ujmntb0d6l44kjd20dc5thmk1ynorw/InstallAssistant.pkg"
             },
             {
                 "title": "macOS Ventura",
