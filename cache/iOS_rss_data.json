@@ -2233,6 +2233,7 @@
             "CVE-2025-24252": false,
             "CVE-2025-30445": false,
             "CVE-2025-24206": false,
+            "CVE-2025-43205": false,
             "CVE-2025-24243": false,
             "CVE-2025-24244": false,
             "CVE-2025-24237": false,
@@ -2276,7 +2277,7 @@
             "CVE-2025-24085",
             "CVE-2025-24201"
         ],
-        "UniqueCVEsCount": 49,
+        "UniqueCVEsCount": 50,
         "DaysSincePreviousRelease": 49
     },
     {
