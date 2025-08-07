@@ -13,7 +13,7 @@
       <link>https://sofa.macadmins.io/v1/rss_feed.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Aug 2025 19:08:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Aug 2025 20:08:01 +0000</lastBuildDate>
     <item>
       <title>XProtect Plist Config 5309</title>
       <link>https://sofa.macadmins.io/</link>
@@ -154,14 +154,14 @@
     <item>
       <title>iPadOS 17.7.6</title>
       <link>https://sofa.macadmins.io/</link>
-      <description>Vulnerabilities Addressed: 49&lt;br&gt;Exploited CVE(s): 2&lt;br&gt;Days to Prev. Release: 49</description>
+      <description>Vulnerabilities Addressed: 50&lt;br&gt;Exploited CVE(s): 2&lt;br&gt;Days to Prev. Release: 49</description>
       <guid isPermaLink="false">iOS_OS_17.7.6</guid>
       <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>iOS 18.4 and iPadOS 18.4</title>
       <link>https://sofa.macadmins.io/</link>
-      <description>Vulnerabilities Addressed: 75&lt;br&gt;Exploited CVE(s): 0&lt;br&gt;Days to Prev. Release: 20</description>
+      <description>Vulnerabilities Addressed: 76&lt;br&gt;Exploited CVE(s): 0&lt;br&gt;Days to Prev. Release: 20</description>
       <guid isPermaLink="false">iOS_OS_18.4</guid>
       <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
     </item>
