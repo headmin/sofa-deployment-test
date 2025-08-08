@@ -1,9 +1,27 @@
 {
     "latest_etag": {
-        "LastCheck": "2025-08-08T16:38:31+00:00Z",
+        "LastCheck": "2025-08-08T17:06:37+00:00Z",
         "UpdateHash": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
     },
     "log": [
+        {
+            "timestamp": "2025-08-08T17:06:37+00:00Z",
+            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
+            "status": "success (200)",
+            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
+        },
+        {
+            "timestamp": "2025-08-08T17:06:09+00:00Z",
+            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
+            "status": "success (200)",
+            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
+        },
+        {
+            "timestamp": "2025-08-08T17:05:43+00:00Z",
+            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
+            "status": "success (200)",
+            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
+        },
         {
             "timestamp": "2025-08-08T16:38:31+00:00Z",
             "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
@@ -42,24 +60,6 @@
         },
         {
             "timestamp": "2025-08-08T08:41:37+00:00Z",
-            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
-            "status": "success (200)",
-            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
-        },
-        {
-            "timestamp": "2025-08-08T08:41:06+00:00Z",
-            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
-            "status": "success (200)",
-            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
-        },
-        {
-            "timestamp": "2025-08-08T08:40:24+00:00Z",
-            "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
-            "status": "success (200)",
-            "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
-        },
-        {
-            "timestamp": "2025-08-08T04:44:36+00:00Z",
             "new_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88",
             "status": "success (200)",
             "previous_etag": "4a07d1d83d10bb5402ed840b54e46b18c052e7ca6a7036db5b92a693e5f2ce88"
